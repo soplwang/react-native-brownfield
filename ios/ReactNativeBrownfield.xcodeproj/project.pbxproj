@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		696CB249230EF9EA000207AF /* ReactNativeBrownfieldNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CB243230EF9EA000207AF /* ReactNativeBrownfieldNotifications.m */; };
 		696CB24A230EF9EA000207AF /* ReactNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CB244230EF9EA000207AF /* ReactNativeViewController.m */; };
 		696CB24B230EF9EA000207AF /* ReactNativeBrownfield.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CB245230EF9EA000207AF /* ReactNativeBrownfield.m */; };
 		696CB24C230EF9EA000207AF /* ReactNativeBrownfieldModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 696CB246230EF9EA000207AF /* ReactNativeBrownfieldModule.m */; };
@@ -29,11 +28,9 @@
 		696CB229230EF910000207AF /* libReactNativeBrownfield.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeBrownfield.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		696CB241230EF9EA000207AF /* ReactNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeViewController.h; sourceTree = "<group>"; };
 		696CB242230EF9EA000207AF /* ReactNativeBrownfieldModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeBrownfieldModule.h; sourceTree = "<group>"; };
-		696CB243230EF9EA000207AF /* ReactNativeBrownfieldNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBrownfieldNotifications.m; sourceTree = "<group>"; };
 		696CB244230EF9EA000207AF /* ReactNativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeViewController.m; sourceTree = "<group>"; };
 		696CB245230EF9EA000207AF /* ReactNativeBrownfield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBrownfield.m; sourceTree = "<group>"; };
 		696CB246230EF9EA000207AF /* ReactNativeBrownfieldModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeBrownfieldModule.m; sourceTree = "<group>"; };
-		696CB247230EF9EA000207AF /* ReactNativeBrownfieldNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeBrownfieldNotifications.h; sourceTree = "<group>"; };
 		696CB248230EF9EA000207AF /* ReactNativeBrownfield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeBrownfield.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,8 +52,6 @@
 				696CB245230EF9EA000207AF /* ReactNativeBrownfield.m */,
 				696CB242230EF9EA000207AF /* ReactNativeBrownfieldModule.h */,
 				696CB246230EF9EA000207AF /* ReactNativeBrownfieldModule.m */,
-				696CB247230EF9EA000207AF /* ReactNativeBrownfieldNotifications.h */,
-				696CB243230EF9EA000207AF /* ReactNativeBrownfieldNotifications.m */,
 				696CB241230EF9EA000207AF /* ReactNativeViewController.h */,
 				696CB244230EF9EA000207AF /* ReactNativeViewController.m */,
 				696CB22A230EF910000207AF /* Products */,
@@ -129,7 +124,6 @@
 			files = (
 				696CB24C230EF9EA000207AF /* ReactNativeBrownfieldModule.m in Sources */,
 				696CB24B230EF9EA000207AF /* ReactNativeBrownfield.m in Sources */,
-				696CB249230EF9EA000207AF /* ReactNativeBrownfieldNotifications.m in Sources */,
 				696CB24A230EF9EA000207AF /* ReactNativeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

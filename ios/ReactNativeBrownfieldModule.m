@@ -1,24 +1,39 @@
 #import "ReactNativeBrownfieldModule.h"
-#import "ReactNativeBrownfieldNotifications.h"
+
+#import <React/RCTBridge.h>
+#import <React/RCTRootContentView.h>
+#import <React/RCTUIManager.h>
 
 @implementation ReactNativeBrownfieldModule
 
-RCT_EXPORT_MODULE(ReactNativeBrownfield);
+@synthesize bridge = _bridge;
 
-RCT_EXPORT_METHOD(setPopGestureRecognizerEnabled:(BOOL)enabled) {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(enabled) forKey:@"enabled"];
-    
-    [[NSNotificationCenter defaultCenter]
-        postNotificationName:TogglePopGestureRecognizerNotification
-        object:nil userInfo:userInfo];
+- (dispatch_queue_t)methodQueue {
+  return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_METHOD(popToNative:(BOOL)animated) {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@(animated) forKey:@"animated"];
-    
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:PopToNativeNotification
-     object:nil userInfo:userInfo];
+RCT_EXPORT_MODULE(ReactNativeBrownfield);
+
+- (UIView *)rootViewForRootTag:(nonnull NSNumber*)rootTag {
+    RCTAssert(RCTIsReactRootView(rootTag),
+      @"Attempt to find RCTRootContentView with rootTag (%@) which is not actually root tag.", rootTag);
+
+    UIView *rootView = [self.bridge.uiManager viewForReactTag:rootTag];
+    if (!rootView || ![rootView isKindOfClass:[RCTRootContentView class]]) {
+        RCTLogError(@"Cannot find RCTRootContentView with rootTag #%@", rootTag);
+        return nil;
+    }
+    return rootView;
+}
+
+RCT_EXPORT_METHOD(setPopGestureRecognizerEnabled:(BOOL)enabled forRoot:(nonnull NSNumber*)rootTag) {
+    UIViewController *viewController = [[self rootViewForRootTag:rootTag] reactViewController];
+    viewController.navigationController.interactivePopGestureRecognizer.enabled = enabled;
+}
+
+RCT_EXPORT_METHOD(popToNative:(BOOL)animated forRoot:(nonnull NSNumber*)rootTag) {
+    UIViewController *viewController = [[self rootViewForRootTag:rootTag] reactViewController];
+    [viewController.navigationController popViewControllerAnimated:animated];
 }
 
 @end

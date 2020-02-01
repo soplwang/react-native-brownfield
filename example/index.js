@@ -6,6 +6,7 @@ import {
   NavigationEvents,
 } from 'react-navigation';
 import ReactNativeBrownfield from '@callstack/react-native-brownfield';
+import {unstable_RootTagContext as RootTagContext} from 'react-native';
 
 const getRandomTheme = () => {
   const getRandomValue = () => Math.round(Math.random() * 255);
@@ -20,6 +21,8 @@ const getRandomTheme = () => {
 };
 
 class HomeScreen extends React.Component {
+  static contextType = RootTagContext;
+
   static navigationOptions = {
     header: null,
   };
@@ -33,6 +36,7 @@ class HomeScreen extends React.Component {
         <NavigationEvents
           onWillFocus={() => {
             ReactNativeBrownfield.setNativeBackGestureAndButtonEnabled(
+              this.context,
               isFirstRoute,
             );
           }}
@@ -55,7 +59,7 @@ class HomeScreen extends React.Component {
           <Button
             onPress={() => {
               if (isFirstRoute) {
-                ReactNativeBrownfield.popToNative(true);
+                ReactNativeBrownfield.popToNative(this.context, true);
               } else {
                 this.props.navigation.goBack();
               }

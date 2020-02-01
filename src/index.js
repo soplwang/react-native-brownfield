@@ -2,9 +2,9 @@
 import {NativeModules, Platform} from 'react-native';
 
 module.exports = {
-  popToNative: (animated?: boolean): void => {
+  popToNative: (rootTag: number, animated?: boolean): void => {
     if (Platform.OS === 'ios') {
-      NativeModules.ReactNativeBrownfield.popToNative(animated);
+      NativeModules.ReactNativeBrownfield.popToNative(animated, rootTag);
     } else if (Platform.OS === 'android') {
       NativeModules.ReactNativeBrownfield.popToNative();
     } else {
@@ -12,10 +12,10 @@ module.exports = {
     }
   },
 
-  setNativeBackGestureAndButtonEnabled: (enabled: boolean): void => {
+  setNativeBackGestureAndButtonEnabled: (rootTag: number, enabled: boolean): void => {
     if (Platform.OS === 'ios') {
       NativeModules.ReactNativeBrownfield.setPopGestureRecognizerEnabled(
-        enabled,
+        enabled, rootTag
       );
     } else if (Platform.OS === 'android') {
       NativeModules.ReactNativeBrownfield.setHardwareBackButtonEnabled(enabled);
